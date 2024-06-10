@@ -3452,6 +3452,7 @@ cc_library(
     deps = [
         ":torque_base_headers",
         ":v8_libbase",
+        "//external:absl_optional",
     ],
 )
 
@@ -3481,6 +3482,9 @@ v8_library(
         "//external:base_trace_event_common",
         "//external:zlib",
         "//external:zlib_compression_utils",
+        "//external:absl_btree",
+        "//external:absl_flat_hash_map",
+        "//external:absl_flat_hash_set",
     ],
 )
 
@@ -3548,6 +3552,7 @@ v8_binary(
         "UNISTR_FROM_CHAR_EXPLICIT=",
     ],
     deps = [
+        "//external:absl_optional",
         "//external:icu",
     ],
 )

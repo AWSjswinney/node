@@ -1980,6 +1980,15 @@ group("v8_maybe_icu") {
   }
 }
 
+group("v8_abseil") {
+  public_deps = [ "//third_party/abseil-cpp:absl" ]
+
+  public_configs = [
+    "//third_party/abseil-cpp:absl_define_config",
+    "//third_party/abseil-cpp:absl_include_config",
+  ]
+}
+
 v8_header_set("torque_runtime_support") {
   visibility = [ ":*" ]
 
@@ -6956,13 +6965,3 @@ if (!build_with_chromium && v8_use_perfetto) {
     ]
   }
 }  # if (!build_with_chromium && v8_use_perfetto)
-
-
-group("v8_abseil") {
-  public_deps = [ "//third_party/abseil-cpp:absl" ]
-
-  public_configs = [
-    "//third_party/abseil-cpp:absl_define_config",
-    "//third_party/abseil-cpp:absl_include_config",
-  ]
-}
